@@ -5,6 +5,7 @@ import vue from "@vitejs/plugin-vue";
 import VueRouter from "unplugin-vue-router/vite";
 import AutoImport from "unplugin-auto-import/vite";
 import Layouts from "vite-plugin-vue-layouts";
+import vuetify from "vite-plugin-vuetify";
 
 export default defineConfig({
   plugins: [
@@ -13,6 +14,7 @@ export default defineConfig({
       dts: "./types/typed-router.d.ts",
     }),
     Layouts(),
+    vuetify(),
     AutoImport({
       dts: "./types/auto-imports.d.ts",
       imports: [
