@@ -1,17 +1,17 @@
-import { defineConfig } from "vite";
-import { fileURLToPath } from "url";
-import { VueRouterAutoImports } from "unplugin-vue-router";
-import vue from "@vitejs/plugin-vue";
-import VueRouter from "unplugin-vue-router/vite";
-import AutoImport from "unplugin-auto-import/vite";
-import Layouts from "vite-plugin-vue-layouts";
-import vuetify from "vite-plugin-vuetify";
+import { defineConfig } from "vite"
+import { fileURLToPath } from "url"
+import { VueRouterAutoImports } from "unplugin-vue-router"
+import vue from "@vitejs/plugin-vue"
+import VueRouter from "unplugin-vue-router/vite"
+import AutoImport from "unplugin-auto-import/vite"
+import Layouts from "vite-plugin-vue-layouts"
+import vuetify from "vite-plugin-vuetify"
 
 export default defineConfig({
   plugins: [
     vue(),
     VueRouter({
-      dts: "./types/typed-router.d.ts",
+      dts: "./types/typed-router.d.ts"
     }),
     Layouts(),
     vuetify(),
@@ -22,12 +22,12 @@ export default defineConfig({
         VueRouterAutoImports,
         {
           "vue-router/auto": ["createRouter", "createWebHistory"],
-          "virtual:generated-layouts": ["setupLayouts"],
-        },
-      ],
-    }),
+          "virtual:generated-layouts": ["setupLayouts"]
+        }
+      ]
+    })
   ],
   resolve: {
-    alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) },
-  },
-});
+    alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) }
+  }
+})
