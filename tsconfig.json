@@ -23,6 +23,11 @@
     /* Allow imports to include TypeScript file extensions. Requires '--moduleResolution bundler' and either '--noEmit' or '--emitDeclarationOnly' to be set. */
     "resolveJsonModule": true,
     /* Enable importing .json files. */
+    "types": [
+      "vite-plugin-vue-layouts/client",
+      "vite-plugin-pages/client"
+    ],
+    /* Specify type package names to be included without being referenced in a source file. */
 
     /* Emit */
     "noEmit": true,

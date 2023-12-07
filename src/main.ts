@@ -1,4 +1,9 @@
-import {createApp, h} from "vue";
+import {createApp, h, resolveComponent} from "vue";
+import router from "./router";
 
-const render = () => h('h1', 'hello world!')
-createApp({render}).mount('#app')
+const setup = () => {
+    return () => h('div', h(resolveComponent('RouterView')))
+}
+const app = createApp({setup})
+app.use(router)
+app.mount('#app')
